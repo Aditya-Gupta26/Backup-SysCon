@@ -1,0 +1,88 @@
+Enter step-size : 0.2
+Enter exploration-variable : 4
+{Error using optimoptions
+simulannealbnd requires Global Optimization Toolbox.
+
+Error in out_max2 (line 27)
+options = optimoptions('simulannealbnd', 'PlotFcns',{@saplotbestf,@saplottemperature,@saplotf,@saplotstopping});
+
+Error in CSIP_Solver_PDE/solve (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+Error in solverPDE (line 84)
+x_opt = obj.solve(h1,k1);
+} 
+matlab.addons.install('Global Optimization Toolbox');
+{Error using matlab.addons.install
+File must be a toolbox file (*.mltbx).
+} 
+matlab.addons.installToolbox('Global Optimization Toolbox');
+{Unable to resolve the name 'matlab.addons.installToolbox'.
+} 
+matlab.addons.toolbox.installToolbox('path_to_GlobalOptimizationToolbox.mltbx');
+{Error using matlab.addons.toolbox.installToolbox
+Unable to find toolbox file path_to_GlobalOptimizationToolbox.mltbx.
+} 
+matlab.addons.explore
+{Unable to resolve the name 'matlab.addons.explore'.
+} 
+IdleTimeout has been reached.
+Parallel pool using the 'Processes' profile is shutting down.
+toolboxPath = matlab.internal.getToolboxPath('globaloptim')
+{Unable to resolve the name 'matlab.internal.getToolboxPath'.
+} 
+solverPDE
+Enter the number of dimensions (for x): {Operation terminated by user during solverPDE
+} 
+ver
+----------------------------------------------------------------------------------------------------------------
+MATLAB Version: 23.2.0.2365128 (R2023b)
+MATLAB License Number: 40677001
+Operating System: Linux 6.8.0-40-generic #40~22.04.3-Ubuntu SMP PREEMPT_DYNAMIC Tue Jul 30 17:30:19 UTC 2 x86_64
+Java Version: Java 1.8.0_202-b08 with Oracle Corporation Java HotSpot(TM) 64-Bit Server VM mixed mode
+----------------------------------------------------------------------------------------------------------------
+MATLAB                                                Version 23.2        (R2023b)
+Simulink                                              Version 23.2        (R2023b)
+Control System Toolbox                                Version 23.2        (R2023b)
+Deep Learning Toolbox                                 Version 23.2        (R2023b)
+Model Predictive Control Toolbox                      Version 23.2        (R2023b)
+Optimization Toolbox                                  Version 23.2        (R2023b)
+Parallel Computing Toolbox                            Version 23.2        (R2023b)
+Partial Differential Equation Toolbox                 Version 23.2        (R2023b)
+ROS Toolbox                                           Version 23.2        (R2023b)
+Reinforcement Learning Toolbox                        Version 23.2        (R2023b)
+Symbolic Math Toolbox                                 Version 23.2        (R2023b)
+help
+Use the Help browser search field to search the documentation, or
+type "help help" for help command options, such as help for methods.
+
+help help
+ help - Help for functions in Command Window
+    This MATLAB function displays the help text for the functionality
+    specified by name, such as a function, method, class, toolbox, or
+    variable.
+
+    Syntax
+      help name
+      help
+
+    Input Arguments
+      name - Functionality name
+        character vector | string scalar
+
+    See also doc, lookfor, more, what, which, whos
+
+    Introduced in MATLAB before R2006a
+    Documentation for help
+       doc help
+
+    Other uses of help
+
+       parallel-computing/help    simulink/help
+    Folders named help
+
+       toolstrip/help    ppt/help    xml/help              xml_xpath/help
+       dom/help          re/help     xml_transform/help
+
+doc help
+quit

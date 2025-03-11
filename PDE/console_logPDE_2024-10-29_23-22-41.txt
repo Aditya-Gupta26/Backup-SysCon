@@ -1,0 +1,55 @@
+Enter step-size : 0.2
+Enter exploration-variable : 4
+     1
+
+{Index exceeds the number of array elements. Index must not exceed 217.
+
+Error in solverPDE>obj_func (line 167)
+    f_val = alpha(562);
+
+Error in fmincon (line 563)
+      initVals.f = feval(funfcn{3},X,varargin{:});
+
+Error in CSIP_Solver_PDE/inner_minimization (line 118)
+           [x,f_val,~,output] = fmincon(obj.objective, initial_x, [],[],[],[],obj.domain_bounds(:,1),obj.domain_bounds(:,2),mycon_handle, options);
+
+Error in CSIP_Solver_PDE>@(u)-1*obj.inner_minimization(u) (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+Error in globaloptim.simulannealbnd.samakedata (line 21)
+        problem.objective(globaloptim.internal.validate.reshapeinput(problem.x0,solverData.currentx));
+
+Error in globaloptim.simulannealbnd.simulannealcommon (line 125)
+solverData = globaloptim.simulannealbnd.samakedata(solverData,problem,options);
+
+Error in globaloptim.simulannealbnd.driver (line 18)
+    globaloptim.simulannealbnd.simulannealcommon(FUN,x0,Aineq, bineq, Aeq, beq, lb, ub,options,defaultopt);
+
+Error in simulannealbnd (line 197)
+    globaloptim.simulannealbnd.driver(FUN, x0, [], [], [], [], lb, ub, options, defaultopt);
+
+Error in out_max2/globopt2 (line 82)
+        [opt,fval,~,out] = simulannealbnd(opt_fxn, initialGuess, lb, ub,options);
+
+Error in out_max2 (line 39)
+[opt, fval] = globopt2(newey,options6,n,f_name,opt_fxn);
+
+Error in CSIP_Solver_PDE/solve (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+Error in solverPDE (line 88)
+x_opt = obj.solve(h1,k1);
+
+Caused by:
+    Failure in initial objective function evaluation. FMINCON cannot continue.
+    Failure in initial user-supplied objective function evaluation.
+} 
+solverPDE
+Enter the number of dimensions (for x): 127
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 100
+Enter the number of dimensions (for u): 2
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 1

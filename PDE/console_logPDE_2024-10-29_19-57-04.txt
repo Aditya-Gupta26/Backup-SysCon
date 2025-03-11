@@ -1,0 +1,116 @@
+Enter step-size : 0.2
+Enter exploration-variable : 4
+     1
+
+{Operation terminated by user during sqpInterface
+
+
+In fmincon (line 900)
+    [X,FVAL,EXITFLAG,OUTPUT,LAMBDA,GRAD,HESSIAN] = sqpInterface(funfcn,X,full(A),full(B),full(Aeq),full(Beq), ...
+
+In CSIP_Solver_PDE/inner_minimization (line 118)
+           [x,f_val,~,output] = fmincon(obj.objective, initial_x, [],[],[],[],obj.domain_bounds(:,1),obj.domain_bounds(:,2),mycon_handle, options);
+
+In CSIP_Solver_PDE>@(u)-1*obj.inner_minimization(u) (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+In globaloptim.simulannealbnd.samakedata (line 21)
+        problem.objective(globaloptim.internal.validate.reshapeinput(problem.x0,solverData.currentx));
+
+In globaloptim.simulannealbnd.simulannealcommon (line 125)
+solverData = globaloptim.simulannealbnd.samakedata(solverData,problem,options);
+
+In globaloptim.simulannealbnd.driver (line 18)
+    globaloptim.simulannealbnd.simulannealcommon(FUN,x0,Aineq, bineq, Aeq, beq, lb, ub,options,defaultopt);
+
+In simulannealbnd (line 197)
+    globaloptim.simulannealbnd.driver(FUN, x0, [], [], [], [], lb, ub, options, defaultopt);
+
+In out_max2/globopt2 (line 82)
+        [opt,fval,~,out] = simulannealbnd(opt_fxn, initialGuess, lb, ub,options);
+
+In out_max2 (line 39)
+[opt, fval] = globopt2(newey,options,n,f_name,opt_fxn);
+
+In CSIP_Solver_PDE/solve (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+In solverPDE (line 88)
+x_opt = obj.solve(h1,k1);
+} 
+IdleTimeout has been reached.
+Parallel pool using the 'Processes' profile is shutting down.
+{Operation terminated by user during parallel.internal.cluster.JobAndTaskPropMap.mapCJSProperties
+
+
+In parallel.internal.cluster.CJSSupport/getProperties (line 189)
+            [mapped, ~, postGetFcns] = parallel.internal.cluster.JobAndTaskPropMap.mapCJSProperties( type, propNames );
+
+In parallel.internal.cluster.CJSSupport/getTaskProperties (line 886)
+            v = obj.getProperties( 'task', tasksuuids, propName );
+
+In parallel.task.CJSTask/hGetProperty (line 216)
+                v = obj.Support.getTaskProperties( obj.SupportID, propName );
+
+In parallel.internal.cluster.CJSJobMethods.setJobTerminalStateFromCluster (line 184)
+                taskState = tasks(ii).hGetProperty( 'StateEnum' );
+
+In parallel.internal.cluster.CJSJobMixin/hSetTerminalStateFromCluster (line 228)
+            CJSJobMethods.setJobTerminalStateFromCluster( obj, state );
+
+In parallel.cluster.Local/hGetJobState (line 333)
+                    job.hSetTerminalStateFromCluster(state);
+
+In parallel.internal.cluster.CJSJobMixin/hGetStateEnum (line 202)
+                s{ii} = cluster.hGetJobState( thisJob, thisJob.hGetProperty( 'StateEnum' ) );
+
+In parallel.Job/get.StateEnum (line 280)
+            se = obj.hGetStateEnum();
+
+In parallel.Job/get.State (line 272)
+            s = obj.StateEnum.Name;
+
+In parallel.Job/hWarnIfNotSubmitted (line 1612)
+            if strcmp(obj.State, 'pending')
+
+In parallel.internal.cluster.wait (line 7)
+    workunit.hWarnIfNotSubmitted();
+
+In parallel.Job/doWait (line 666)
+            ok = parallel.internal.cluster.wait( job, varargin{:} );
+
+In parallel.Job/wait (line 1296)
+                ok = job.doWait( state, timeout );
+
+In parallel.internal.pool.AbstractInteractiveClient/pStopWorkersAndDisconnect (line 251)
+                        obj.ParallelJob.wait(parallel.internal.types.States.Finished.Name, timeToWait);
+
+In parallel.internal.pool.AbstractInteractiveClient/stopLabsAndDisconnect (line 177)
+            obj.pStopWorkersAndDisconnect();
+
+In parallel.internal.pool.AbstractClusterPool/delete (line 55)
+            aPool.Client.stopLabsAndDisconnect();
+
+In parallel.internal.pool.AbstractClusterPool/hDeleteLeaveHandleValid (line 555)
+            delete(aPool, 'leaveHandleValid');
+
+In parallel.internal.pool.PoolManager/cleanupStalePools (line 143)
+            arrayfun(@hDeleteLeaveHandleValid, invalidPools);
+
+In parallel.internal.pool.PoolArrayManager.cleanupStalePools (line 32)
+            cleanupStalePools(parallel.internal.pool.PoolManager.getInstance());
+} 
+runnermsa
+Starting parallel pool (parpool) using the 'local' profile ...
+Connected to parallel pool with 72 workers.
+    72
+
+solverPDE
+Enter the number of dimensions (for x): 217
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 100
+Enter the number of dimensions (for u): 2
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 1

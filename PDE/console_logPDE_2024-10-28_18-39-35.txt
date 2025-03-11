@@ -1,0 +1,42 @@
+Enter step-size : 0.2
+Enter exploration-variable : 4
+     1
+
+{Operation terminated by user during sqpInterface
+
+
+In fmincon (line 900)
+    [X,FVAL,EXITFLAG,OUTPUT,LAMBDA,GRAD,HESSIAN] = sqpInterface(funfcn,X,full(A),full(B),full(Aeq),full(Beq), ...
+
+In CSIP_Solver_PDE/inner_minimization (line 118)
+           [x,f_val,~,output] = fmincon(obj.objective, initial_x, [],[],[],[],obj.domain_bounds(:,1),obj.domain_bounds(:,2),mycon_handle, options);
+
+In CSIP_Solver_PDE>@(u)-1*obj.inner_minimization(u) (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+In globaloptim.simulannealbnd.samakedata (line 21)
+        problem.objective(globaloptim.internal.validate.reshapeinput(problem.x0,solverData.currentx));
+
+In globaloptim.simulannealbnd.simulannealcommon (line 125)
+solverData = globaloptim.simulannealbnd.samakedata(solverData,problem,options);
+
+In globaloptim.simulannealbnd.driver (line 18)
+    globaloptim.simulannealbnd.simulannealcommon(FUN,x0,Aineq, bineq, Aeq, beq, lb, ub,options,defaultopt);
+
+In simulannealbnd (line 197)
+    globaloptim.simulannealbnd.driver(FUN, x0, [], [], [], [], lb, ub, options, defaultopt);
+
+In out_max2/globopt2 (line 82)
+        [opt,fval,~,out] = simulannealbnd(opt_fxn, initialGuess, lb, ub,options);
+
+In out_max2 (line 39)
+[opt, fval] = globopt2(newey,options6,n,f_name,opt_fxn);
+
+In CSIP_Solver_PDE/solve (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+In solverPDE (line 84)
+x_opt = obj.solve(h1,k1);
+} 
+IdleTimeout has been reached.
+Parallel pool using the 'Processes' profile is shutting down.

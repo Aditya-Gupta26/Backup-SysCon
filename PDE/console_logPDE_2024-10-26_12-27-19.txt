@@ -1,0 +1,22 @@
+Enter step-size : 0.2
+Enter exploration-variable : 4
+{out_max2 is not found in the current folder or on the MATLAB path, but exists in:
+    /home/souvik/Git
+
+Change the MATLAB current folder or add its folder to the MATLAB path.
+
+Error in CSIP_Solver_PDE/solve (line 71)
+            [opt,fval] = out_max2(@(u) -1*obj.inner_minimization(u),f_name,obj.domain_dim,obj.constraint_dim,h,k,obj.constraint_bounds);
+
+Error in solverPDE (line 84)
+x_opt = obj.solve(h1,k1);
+} 
+solverPDE
+Enter the number of dimensions (for x): 562
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 1
+Enter the number of dimensions (for u): 2
+Do you want to enter separate bounds for each dimension? (Y/N): N
+Enter lower bound : 0
+Enter higher bound : 1
